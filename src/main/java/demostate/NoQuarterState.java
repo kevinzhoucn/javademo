@@ -1,8 +1,12 @@
 package demostate;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 public class NoQuarterState implements IState
 {
     GumballMachine gumballMachine;
+
     public NoQuarterState( GumballMachine gumballMachine ) {
         this.gumballMachine = gumballMachine;
     }
