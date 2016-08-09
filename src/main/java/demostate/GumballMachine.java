@@ -1,18 +1,26 @@
 package demostate;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GumballMachine {
     IState noQuarterState;
     IState hasQuarterState;
 
     IState state;
-    int count;   
+    int count;
+    GumballMachineConfig gumballMachineConfig;
 
-    public GumballMachine(int numberGumballs) {
+    @Autowired
+    public GumballMachine(GumballMachineConfig gumballMachineConfig) {
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
 
-        this.count = numberGumballs;
-        if ( numberGumballs > 0 ) {
+        this.gumballMachineConfig = gumballMachineConfig;
+
+        this.count = gumballMachineConfig.gumballNumber;
+        if ( gumballMachineConfig.gumballNumber > 0 ) {
             state = noQuarterState;
         }
     }
