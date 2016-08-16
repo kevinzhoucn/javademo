@@ -9,18 +9,19 @@ package com.thinkjava.ch21.concurrency;
 
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Component
 public class ConcurrencyTask implements Runnable {
 
 	@Autowired
-	private LiftOff liftOff;
+	// @Qualifier("CachedThreadPool")
+	// @Qualifier("TaskWithResultTask")
+	@Qualifier("FibonacciNumWithResultTask")
+	private ITask taskItem;
 
 	// Method to run the main thread
 	public void run() {
-		System.out.println("Lift off concurrecny test: Start");
-        Thread thread = new Thread(liftOff);
-        thread.start();
-        System.out.println("Lift off concurrecny test: End");
+		taskItem.runTask();
 	}
 } ///:~
