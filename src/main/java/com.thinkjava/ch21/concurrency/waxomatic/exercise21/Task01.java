@@ -13,27 +13,21 @@ package com.thinkjava.ch21.concurrency.waxomatic.exercise21;
 import java.util.concurrent.*;
 import org.springframework.stereotype.Component;
 
-// @Component
+@Component
 public class Task01 implements Runnable {
     @Override
     public void run() {
+        long startTime = System.currentTimeMillis();
         try {
             synchronized(this) {
-                this.wait();
+                wait();
                 System.out.println("====== Invoke from Task01, received signal! ======");
+                long endTime = System.currentTimeMillis();
+                long duringTime = endTime - startTime;
+                System.out.println("====== Time consumeing: " + duringTime + " ======");
             }
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
-
-        // try {
-        //     synchronized(this) {
-        //         System.out.println("====== Sleep from Task01! ======");
-        //         TimeUnit.SECONDS.sleep(2);
-        //         this.notifyAll();
-        //     }
-        // } catch(InterruptedException e) {
-        //     e.printStackTrace();
-        // }
     }
 }

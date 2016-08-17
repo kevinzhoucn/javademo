@@ -38,6 +38,13 @@
         <scope>test</scope>
     </dependency>
 
+    <!-- my own local file -->
+    <dependency>
+      <groupId>com.kevinking.util</groupId>
+      <artifactId>sprinttool</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
   </dependencies>
 
   <build>

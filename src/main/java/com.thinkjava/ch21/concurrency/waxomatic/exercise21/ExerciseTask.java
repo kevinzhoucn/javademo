@@ -17,17 +17,15 @@ import com.thinkjava.ch21.concurrency.ITask;
 
 @Component("exerciseTask")
 public class ExerciseTask implements ITask {
-    // @Autowired
+    @Autowired
     private Task01 task01;
 
-    // @Autowired
+    @Autowired
     private Task02 task02;
 
     @Override
     public void runTask() {
         System.out.println("====== ExerciseTask: Start ======");
-        task01 = new Task01();
-        task02 = new Task02(task01);
         
         ExecutorService exec = Executors.newCachedThreadPool();
         exec.execute(task01);

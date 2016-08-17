@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 @Component
 public class ConcurrencyTask implements Runnable {
-
 	@Autowired
 	// @Qualifier("CachedThreadPool")
 	// @Qualifier("TaskWithResultTask")
@@ -22,7 +21,9 @@ public class ConcurrencyTask implements Runnable {
     // @Qualifier("entranceTask")
     // @Qualifier("interruptingTask")
     // @Qualifier("waxOMatic")
-    @Qualifier("exerciseTask")
+    // @Qualifier("exerciseTask")
+    // @Qualifier("exerciseTask02")
+    @Qualifier("restaurantTask")
 	private ITask taskItem;
 
 	// Method to run the main thread
