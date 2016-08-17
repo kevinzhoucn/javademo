@@ -13,6 +13,8 @@ import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Configuration
-@ComponentScan(basePackages="com.thinkjava.ch21.concurrency")
+@ComponentScan(basePackages={"com.thinkjava.ch21.concurrency", "com.thinkjava.ch21.concurrency.p213", 
+                             "com.thinkjava.ch21.concurrency.garden", "com.thinkjava.ch21.concurrency.interrupt",
+                             "com.thinkjava.ch21.cocurrency.waxomatic", "com.thinkjava.ch21.cocurrency.waxomatic.exercise21"})
 public class ConcurrencyConfig {
 }

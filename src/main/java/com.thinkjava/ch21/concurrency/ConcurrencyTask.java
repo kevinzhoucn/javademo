@@ -17,7 +17,12 @@ public class ConcurrencyTask implements Runnable {
 	@Autowired
 	// @Qualifier("CachedThreadPool")
 	// @Qualifier("TaskWithResultTask")
-	@Qualifier("FibonacciNumWithResultTask")
+	// @Qualifier("FibonacciNumWithResultTask")
+    // @Qualifier("EvenCheckerTask")
+    // @Qualifier("entranceTask")
+    // @Qualifier("interruptingTask")
+    // @Qualifier("waxOMatic")
+    @Qualifier("exerciseTask")
 	private ITask taskItem;
 
 	// Method to run the main thread
