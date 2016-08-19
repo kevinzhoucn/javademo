@@ -23,7 +23,9 @@ public class ConcurrencyTask implements Runnable {
     // @Qualifier("waxOMatic")
     // @Qualifier("exerciseTask")
     // @Qualifier("exerciseTask02")
-    @Qualifier("restaurantTask")
+    // @Qualifier("restaurantTask")
+    // @Qualifier("waxOMaticv2")
+    @Qualifier("liftOffTaskv2")
 	private ITask taskItem;
 
 	// Method to run the main thread
